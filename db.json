@@ -1,0 +1,9 @@
+{
+    "host": "localhost",
+    "user": "root",
+    "password": "",
+    "database": "assignment",
+    "pool_size": 50,
+    "multipleStatements": true,
+    "charset":"utf8mb4_unicode_ci"
+}

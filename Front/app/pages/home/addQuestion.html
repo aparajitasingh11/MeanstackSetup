@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<body>
+ <div id="id01" class="modal" >
+  <form class="modal-content" name="quesForm" ng-submit="addQuestionData(quesForm)">
+   <div class="container">
+     <h1>Add New Call</h1>
+     <hr>
+     <div class="form-row" ng-repeat="ques in addQuestions">
+       {{$index+1}}.<div class="col-md-6">
+       <input class="form-control" id="questionMain" name="questionMain" type="text" ng-model="ques.title" placeholder="Enter Question Title" required>
+     </div>
+     <div class="col-md-4">
+      <select ng-model="ques.questionType"class="form-control" required id="questionTypeMain" name="questionTypeMain">
+       <option label = "Please select a question type" ng-selected="true" disabled="true"></option>
+       <option value="0">Multi-line Text</option>
+       <option value="1">Single Choice</option>
+       <option value="2">Multiple Choice</option>
+     </select>
+
+   </div>
+   <!-- Multi-line text -->
+   <div class="col-md-12" ng-if="ques.questionType=='0'">
+    <div class="col-md-6">
+      <textarea class="form-control" ng-model="ques.answer" name="answerMain" required placeholder="Enter your answer here...">Enter your answer here...</textarea>
+    </div>
+  </div>
+
+  <!-- Single choice -->
+  <div class="col-md-12" ng-if="ques.questionType=='1'">
+   <div class="form-row" style="margin-left: 1%;">
+    <div class="col-md-6">
+      <input class="form-control" id="questions" type="text" name="answerMain" ng-model="ques.answer" placeholder="Enter your choice" required> 
+    </div>
+    <div class="col-md-5">
+      <a href="" ng-click="addSubQuestionField($index)">
+       <i class="fa fa-plus" aria-hidden="true">Add Sub Question</i>
+     </a>
+   </div>
+ </div>
+</div>
+
+<!-- Multi choice -->
+<div class="col-md-12" ng-if="ques.questionType=='2'">
+  <div class="col-md-6">
+   <label>Enter you choices in following fields</label>
+   <input class="form-control" id="" name="answerMain" type="text" ng-repeat="choice in multiChoice" ng-model="ques.options[$index]" placeholder="{{choice.option}}" required >
+ </div>
+</div>
+
+<br/>
+
+<!-- For subquestion -->
+<div class="form-row" ng-repeat="subQues in ques.subQuestion">
+ {{subOrder[$index]}}.<div class="col-md-6">
+ <input class="form-control" id="questions" name="subQuesTitle" type="text" ng-model="subQues.title" placeholder="Enter Sub Question Title" required>
+</div>
+<div class="col-md-4">
+  <select ng-model="subQues.questionType" name="subQuestionType" class="form-control" required>
+   <option label = "Please select a question type" ng-selected="true" disabled="true"></option>
+   <option value="1">Single Choice</option>
+   <option value="2">Multiple Choice</option>
+ </select>
+</div>
+
+<!-- Single choice -->
+<div class="col-md-12" ng-if="subQues.questionType=='1'">
+ <div class="form-row" style="margin-left: 1%;">
+  <div class="col-md-6">
+    <input class="form-control" id="questions" type="text" name="answerSub" ng-model="subQues.answer" placeholder="Enter your choice" required> 
+  </div>
+</div>
+</div>
+
+<!-- Multi choice -->
+<div class="col-md-12" ng-if="subQues.questionType=='2'">
+  <div class="col-md-6">
+   <label>Enter you choices in following fields</label>
+   <input class="form-control" id="questionrrs" type="text" name="answerSub" ng-repeat="choice in multiChoice" ng-model="subQues.options[$index]" placeholder="{{choice.option}}" required >
+ </div>
+</div>
+<br/>
+</div>
+<!-- Sub question ends -->
+</div>
+
+
+<div class="form-group">
+  <div class="form-row">
+   <div class="col-md-6">
+    <div style="color:red" ng-show="isSubmitted && quesForm.questionMain.$error.required" class="form-error">
+      *Please fill the above question before moving next!
+    </div>
+    <div style="color:red" ng-show="isSubmitted && quesForm.answerMain.$error.required" class="form-error">
+      *Please fill the answer before moving next!
+    </div>
+
+    <div style="color:red" ng-show="isSubmitted && quesForm.subQuesTitle.$error.required" class="form-error">
+      *Please fill sub question title!
+    </div>
+
+
+
+  </div>
+  <div class="col-md-6">
+    <div style="color:red" ng-show="isSubmitted && quesForm.questionTypeMain.$error.required" class="form-error">
+      *Please fill the  question type before moving next!
+    </div>
+    <div style="color:red" ng-show="isSubmitted && quesForm.subQuestionType.$error.required" class="form-error">
+      *Please fill sub question type!
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="clearfix" style="">
+ <div class="form-group">
+   <div class="col-md-12" style="float:left;margin-left: 84%;">
+     <a href="" ng-click="addMoreQuestion(quesForm)">
+      <i class="fa fa-plus" aria-hidden="true">Add New Question</i>
+    </a>
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-md-12">
+    <button type="submit" class="signupbtn">Save</button>
+    <button type="button" ng-click="cancel($event)" class="cancelbtn">Cancel</button>
+  </div>
+</div>
+
+</div>
+</div>
+</div>
+</form>
+</div>
+</body>
+
+</html>

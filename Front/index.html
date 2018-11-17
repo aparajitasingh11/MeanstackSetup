@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="webApp">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Assignment</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="app/css/bootstrap.min.css">
+  <link rel="stylesheet" href="app/css/custom.css">
+  <link href="https://fonts.googleapis.com/css?family=Overpass:200,300,400,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+  crossorigin="anonymous">
+  <link href="bower_components/angular-material-icons/angular-material-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body style="overflow: hidden;" animation-pages > 
+  <div class="loderBG" id="loderBG"></div>
+  <div class="container">
+    <div class="row">
+      <div id="loader">
+        <div class="cube-wrapper">
+          <div class="cube-folding">
+            <div class="cssload-container">
+              <div id="loader"></div>
+            </div>
+          </div>
+        </div>
+        <!-- cube-wrapper -->
+      </div>
+      <!-- loader -->
+    </div>
+    <!-- row -->
+  </div>
+
+  <main class="animsition home ">
+    <ui-view></ui-view>
+    <footer-web></footer-web>
+  </body>
+
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+  <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+  <script src="bower_components/ngstorage/ngStorage.min.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script type="text/javascript" src="bower_components/moment/moment.js"></script>
+  <script type="text/javascript" src="bower_components/angular-material/angular-material.min.js"></script>
+  <script src="bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+
+  <script src="app.js"></script>
+  <script src="config.js"></script>
+  <script src="app/services/database.fac.js"></script>
+  <script src="app/pages/home/home.ctrl.js"></script>
+
+  </html>

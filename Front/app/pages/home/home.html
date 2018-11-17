@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+ <div id="id01" class="modal" >
+  <form class="modal-content" name="eventForm" ng-submit="addEvent(eventForm,event)">
+   <div class="container" style=" height: 500px;">
+     <h1>Add New Call</h1>
+     <hr>
+     <div class="form-group">
+     </div>
+
+     <div class="clearfix" style="margin-top: 30%;">
+       <div class="form-group">
+         <div class="col-md-12" style="float:left;margin-left: 84%;">
+          <a href="#addquestion">
+            <i class="fa fa-plus" aria-hidden="true">Add New Question</i>  
+          </a>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-12">
+            <button type="submit" class="signupbtn">Save</button>
+            <button type="button" ng-click="cancel($event)" class="cancelbtn">Cancel</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</form>
+</div>
+</body>
+
+</html>
